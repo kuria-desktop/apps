@@ -3,6 +3,7 @@ import os    # Access to `/` for strings
 # src: out -> Compiles src.nim from srcDir as bin/out
 namedBin = {
   "settings/main": "bin/settings",
+  "suji/main": "bin/suji"
 }.toTable()
 
 version       = "0.1.0"
@@ -13,4 +14,4 @@ license       = "GPL-3.0-only"
 
 # Dependencies
 
-requires "nim >= 1.4.8", "owlkettle"
+requires "nim >= 1.4.8", "owlkettle#06406e8", "mathexpr"

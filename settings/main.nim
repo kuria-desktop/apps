@@ -1,4 +1,4 @@
-import std/[strutils, sets]
+import std/[sets]
 import owlkettle, owlkettle/adw
 
 viewable App:
@@ -39,7 +39,7 @@ method view(app: AppState): Widget =
           ListBox:
             selectionMode = SelectionSingle
             selected = toHashSet([app.page])
-            style = {ListBoxNavigationSidebar}
+            style = [ListBoxNavigationSidebar]
             
             proc select(pages: HashSet[int]) =
               for page in pages:
@@ -54,10 +54,9 @@ method view(app: AppState): Widget =
                 xAlign = 0.0
         
         Separator() {.addSeparator.}
-        
         Box:
           Label:
-            text = repeat("Page " & $app.page & " ", 5)
+            text = "Page " & $app.page & " "
             wrap = true
 
 adw.brew(gui(App()))
